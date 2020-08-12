@@ -6,11 +6,7 @@ namespace BinaryTreeImplementation
     {
         public static void PrintInOrder(this Node node)
         {
-            if (node == null)
-            {
-                return;
-            }
-
+            if (node == null) return;
             PrintInOrder(node.LeftNode);
             Console.Write($"{node.Value} ");
             PrintInOrder(node.RightNode);
@@ -34,11 +30,8 @@ namespace BinaryTreeImplementation
         }
         public static void PrintPreOrder(this Node node)
         {
-            if (node == null)
-            {
-                return;
-            }
-            else
+            if (node == null) return;
+                else
             {
                 Console.Write($"{node.Value} ");
                 node.LeftNode.PrintPreOrder();
@@ -46,18 +39,12 @@ namespace BinaryTreeImplementation
 
             }
         }
-        public static void PostPreOrder(this Node node)
+        public static void PostOrder(this Node node)
         {
-            if (node == null)
-            {
-                return;
-            }
-            else
-            {
-                node.LeftNode.PostPreOrder();
-                node.RightNode.PostPreOrder();
-                Console.Write($"{node.Value} ");
-            }
+            if (node == null) return;
+            node.LeftNode.PostOrder();
+            node.RightNode.PostOrder();
+            Console.Write($"{node.Value} ");
         }
     }
 }

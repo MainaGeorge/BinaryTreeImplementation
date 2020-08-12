@@ -2,9 +2,9 @@
 
 namespace BinaryTreeImplementation
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             var node = new Node(8)
             {
@@ -23,13 +23,13 @@ namespace BinaryTreeImplementation
             tree.RootNode.AddBinaryNode(node);
 
             var foundNode = tree.RootNode.FindNodeWithGivenValue(8);
-            Console.WriteLine(foundNode.Value);
+            Console.WriteLine(foundNode.RightNode.Value);
             Console.WriteLine("in order: ");
             tree.RootNode.PrintInOrder();
             Console.WriteLine("\npre order: ");
             tree.RootNode.PrintPreOrder();
             Console.WriteLine("\npost order");
-            tree.RootNode.PostPreOrder();
+            tree.RootNode.PostOrder();
             Console.WriteLine();
 
             try
